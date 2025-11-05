@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahmoud Qutama | Portfolio</title>
+  <style>
+    body {
+      width: 900px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #0e0e0e, #1b1b1b);
+      color: white;
+      font-family: "Poppins", sans-serif;
+      border: 3px solid #2a2a2a;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+      padding-bottom: 60px;
+    }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar h2 {
+      color: #ffd700;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-weight: 500;
+    }
+
+    .navbar li {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .navbar li:hover {
+      color: #00a2ff;
+    }
+
+    /* ===== Hero Section ===== */
+    .main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .middle {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    h1 {
+      color: #ffd700;
+      font-size: 32px;
+    }
+
+    h2 {
+      color: #ffd700;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e6e6e6;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 320px;
+      height: 320px;
+      margin-right: 20px;
+      box-shadow: 0 0 35px rgba(0, 140, 255, 0.6),
+        0 0 70px rgba(255, 215, 0, 0.3), 0 15px 35px rgba(0, 0, 0, 0.7);
+      transition: all 0.5s ease;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(0, 140, 255, 0.8),
+        0 0 100px rgba(255, 215, 0, 0.4),
+        0 20px 45px rgba(0, 0, 0, 0.8);
+      border: 2px solid rgba(255, 215, 0, 0.6);
+    }
+
+    /* ===== Buttons ===== */
+    form {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      margin-left: 40px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #ffd700, #c6a700);
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    /* ===== About Section ===== */
+    .aboutme,
+    .skills-section,
+    .mechatronics-section {
+      width: 800px;
+      margin: 40px auto;
+      padding: 35px;
+      border-radius: 16px;
+      background: #141414;
+      box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
+    }
+
+    .aboutme h2,
+    .skills-section h2,
+    .mechatronics-section h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .about-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .skills-list li::before {
+      content: "✔";
+      color: #00a2ff;
+      margin-right: 8px;
+    }
+
+    /* ===== Skills Section ===== */
+    .skills-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .skill-card {
+      flex: 1;
+      min-width: 240px;
+      background: #0f0f0f;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    }
+
+    .skill-card h3 {
+      color: #00a2ff;
+      margin-bottom: 15px;
+    }
+
+    /* ===== Mechatronics Section ===== */
+    .mechatronics-section {
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+    }
+
+    .mecha-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .mecha-card {
+      flex: 1;
+      min-width: 240px;
+      background: #0f0f0f;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+    }
+
+    .mecha-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .mecha-card h3 {
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+
+    .mecha-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mecha-card li {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+
+    /* ===== Contact Section ===== */
+.contact-section {
+  width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #141414;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+}
+
+.contact-section h2 {
+  color: #ffd700;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 32px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(135deg, #32e27c, #0f7a63);
+}
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h2>MahmoudQutama</h2>
+    <ul>
+      <li>About</li>
+      <li>Projects</li>
+      <li>Skills</li>
+      <li>Mechatronics</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="middle">
+      <h1>Full-Stack & Mechatronics Engineer</h1>
+      <p>
+        I design and build intelligent systems that merge mechanical design, electronics, and software.<br>
+        Experienced in developing full-stack web applications and IoT-based embedded solutions.
+      </p>
+    </div>
+    <img src="static/images/mahmoud.jpg" alt="Mahmoud Qutama" />
+  </div>
+
+  <form action="{% url 'projects' %}" method="get">
+    <button type="submit">My Projects</button>
+  </form>
+
+  <form action="{% url 'contact' %}" method="get">
+    <button type="submit">Contact Me</button>
+  </form>
+
+  <div class="aboutme">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        I am a full-stack & mechatronics engineer passionate about creating smart systems that connect hardware and software. 
+        I build modern web apps and embedded systems that interact seamlessly to solve real-world problems.
+      </p>
+      <ul class="skills-list">
+        <li>Full Stack Development</li>
+        <li>Robotics & Embedded Systems</li>
+        <li>IoT & Automation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="skills-section">
+    <h2>Programming & DevOps Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <h3>Front-end</h3>
+        <ul>
+          <li>⚙️ React</li>
+          <li>🎨 Tailwind</li>
+          <li>💻 JavaScript</li>
+          <li>🧠 Zustand</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Back-end</h3>
+        <ul>
+          <li>🌀 Django</li>
+          <li>🌐 Node.js</li>
+          <li>🗄️ PostgreSQL</li>
+          <li>📦 Redis</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>DevOps</h3>
+        <ul>
+          <li>🐳 Docker</li>
+          <li>🔧 Git</li>
+          <li>🚀 CI/CD</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mechatronics-section">
+    <h2>Mechatronics Projects</h2>
+    <div class="mecha-container">
+      <div class="mecha-card">
+        <h3>🤖 Line Following Robot</h3>
+        <ul>
+          <li>Built with Arduino & IR sensors</li>
+          <li>PID control for smooth movement</li>
+          <li>3D printed chassis design</li>
+        </ul>
+      </div>
+      <div class="mecha-card">
+        <h3>⚙️ Smart Home System</h3>
+        <ul>
+          <li>Raspberry Pi + Node.js + React dashboard</li>
+          <li>MQTT-based IoT communication</li>
+          <li>Live sensor data monitoring</li>
+        </ul>
+      </div>
+      <div class="mecha-card">
+        <h3>🔋 Autonomous Rover</h3>
+        <ul>
+          <li>ESP32 microcontroller</li>
+          <li>Ultrasonic obstacle avoidance</li>
+          <li>Real-time video streaming</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-section">
+  <h2>Contact Me</h2>
+  <p>Let's work together or chat about tech and innovation 🚀</p>
+
+  <a href="https://wa.me/972594529224" target="_blank" class="whatsapp-btn">
+    💬 Chat on WhatsApp
+  </a>
+</div>
+</body>
+</html>

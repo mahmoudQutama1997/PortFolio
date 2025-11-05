@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Projects</title></head>
+<body style="background-color:#1a1818; color:white;">
+    <h1>My Projects</h1>
+    {% for project in projects %}
+        <div style="border:1px solid #555; margin:10px; padding:10px;">
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.description }}</p>
+            {% if project.link %}
+                <a href="{{ project.link }}" target="_blank">View Project</a>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No projects yet.</p>
+    {% endfor %}
+</body>
+</html>
